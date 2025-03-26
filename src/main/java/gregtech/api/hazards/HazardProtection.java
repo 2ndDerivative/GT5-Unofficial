@@ -72,7 +72,7 @@ public class HazardProtection {
     }
 
     public static boolean hasHazmatEnchant(ItemStack stack) {
-        if (stack == null) return false;
+        if (stack == null || stack.getItem() == null) return false;
         Map<Integer, Integer> tEnchantments = EnchantmentHelper.getEnchantments(stack);
         Integer level = tEnchantments.get(EnchantmentHazmat.INSTANCE.effectId);
 
